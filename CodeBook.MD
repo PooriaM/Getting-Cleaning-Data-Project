@@ -1,6 +1,5 @@
 ## Getting and Cleaning Data Project
 
-Heather Wade
 
 ### Description
 Additional information about the variables, data and transformations used in the course project for the Johns Hopkins Getting and Cleaning Data course.
@@ -23,8 +22,22 @@ For each record in the dataset it is provided:
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
+## Variables:   
+* `X_train`, `Y_train`, `X_test`, `Y_test`, `subject_train` and `subject_test` contain the data from the downloaded files.
+* `x_data`, `y_data` and `subject_data` merge the previous datasets to further analysis.
+* `features` contains the names for the `X_test` and `X_train` datasets, which are applied to the column names in full_data.
+* `activity_labels` contains the names for test lales 1:6 as "WALKING","WALKING_UPSTAIRS","WALKING_DOWNSTAIRS","SITTING", "STANDING","LAYING"
+* `full_data` is a dataframe created after merging all source information
+* `finaldata` is a dataframe created after subsetting `full_data` to get the mean() and std() columns only.
+* `tidy_data` is a cleaned up `finaldata` with the average of each variable for each activity and each subject
+
+## About R script
+
 ### Section 1. Merge the training and the test sets to create one data set.
-After setting the source directory for the files, read into tables the data located in
+
+step 1: download zip file from website
+step 2: unzip data
+step 3: load following files and read data into tables and assign column names.
 - features.txt
 - activity_labels.txt
 - subject_train.txt
@@ -34,17 +47,20 @@ After setting the source directory for the files, read into tables the data loca
 - x_test.txt
 - y_test.txt
 
-Assign column names and merge to create one data set.
+step 4: merge train and test data (dataframe: full_data)
 
 ## Section 2. Extract only the measurements on the mean and standard deviation for each measurement. 
-Create a logcal vector that contains TRUE values for the ID, mean and stdev columns and FALSE values for the others.
-Subset this data to keep only the necessary columns.
+Searches through column names (features) to find the ones that contain "mean()" or "std()".
+Subsets found columns from full_data and generates dataframe final_data
 
 ## Section 3. Use descriptive activity names to name the activities in the data set
-Merge data subset with the activityType table to cinlude the descriptive activity names
+step 1: introduce activity names
+step 2: replace Test.lablels 1 to 6 with activity names
 
 ## Section 4. Appropriately label the data set with descriptive activity names.
 Use gsub function for pattern replacement to clean up the data labels.
 
 ## Section 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
-Per the project instructions, we need to produce only a data set with the average of each veriable for each activity and subject
+Use "dplyr" package to group data by activity and subject then summarize each column to the mean of whole column. the result dataframe is tidy_data
+
+## Write dataframe tidy_data to tidy_data.txt.
