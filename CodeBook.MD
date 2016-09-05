@@ -63,4 +63,5 @@ Use gsub function for pattern replacement to clean up the data labels.
 ## Section 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
 Use "dplyr" package to group data by activity and subject then summarize each column to the mean of whole column. the result dataframe is tidy_data
 
-## Write dataframe tidy_data to tidy_data.txt.
+## Output 
+Write dataframe tidy_data to tidy_data.txt.
