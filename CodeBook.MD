@@ -38,6 +38,7 @@ For each record in the dataset it is provided:
 step 1: download zip file from website
 step 2: unzip data
 step 3: load following files and read data into tables and assign column names.
+
 - features.txt
 - activity_labels.txt
 - subject_train.txt
