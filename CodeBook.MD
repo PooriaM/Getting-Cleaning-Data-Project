@@ -36,7 +36,9 @@ For each record in the dataset it is provided:
 ### Section 1. Merge the training and the test sets to create one data set.
 
 step 1: download zip file from website
+
 step 2: unzip data
+
 step 3: load following files and read data into tables and assign column names.
 
 - features.txt
@@ -56,6 +58,7 @@ Subsets found columns from full_data and generates dataframe final_data
 
 ## Section 3. Use descriptive activity names to name the activities in the data set
 step 1: introduce activity names
+
 step 2: replace Test.lablels 1 to 6 with activity names
 
 ## Section 4. Appropriately label the data set with descriptive activity names.
